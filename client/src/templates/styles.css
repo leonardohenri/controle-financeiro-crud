@@ -1,0 +1,78 @@
+.body{
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(210, 197, 122, 0.12);
+}
+.header{
+  height: 100px;
+  display: flex;
+  background-color: rgba(2, 104, 90, 0.79);
+  justify-content: center;
+}
+.grid{
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  top: -20px;
+}
+.input_output{
+  width: 500px;
+  height: 100px;
+  border: 2px solid rgb(129, 127, 127);
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formulario{
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 10px;
+  border: 2px solid rgb(129, 127, 127) ;
+  display: flex;
+  gap: 50px;
+  background-color: white;
+}
+.input__text{
+  display: flex;
+  gap: 10px;
+  border: none;
+}
+.input__radio{
+  border: none;
+}
+.input__text label{
+  font-size: 30px;
+  margin-right: 5px;
+}
+#descricao{
+  width: 300px;
+}
+.input__radio label{
+  font-size: 30px;
+}
+table{
+  width: 80%;
+  border: 2px solid black;
+  margin: 0 auto;
+  padding: 2px;
+}
+th{
+  border: 2px solid black;
+}
+.th__date{
+  width: 10%;
+}
+.th__descricao{
+  width: 60%;
+}
+.th__valor{
+  width: 10%;
+}
+.th__id{
+  width: 5%;
+}
