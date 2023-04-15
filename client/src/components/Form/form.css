@@ -1,0 +1,50 @@
+.formulario{
+    display: flex;
+    align-items: center;
+  }
+  .container__formulario{
+    margin: 0 auto 10px;
+    max-width: 85vw;
+    border: 2px solid rgb(129, 127, 127);
+  }
+  fieldset{
+    border: none;
+  }
+  
+  .input__text{
+    display: flex;
+  }
+  .input__radio{
+    border: none;
+  }
+  .input__text label{
+    font-size: 30px;
+    margin-right: 5px;
+  }
+  #descricao{
+    width: 600px;
+    height: 20px;
+  }
+  #valor{
+    width: 100px;
+    height: 20px;
+  }
+  #data{
+    height: 20px;
+  }
+  .btn{
+    background: rgba(2, 104, 90, 0.79);;
+	color: white;
+	border-style: outset;
+	height: 40px;
+	width: 100px;
+	font: bold15px arial,sans-serif;
+	text-shadow: none;
+  }
+  .input__radio label{
+    font-size: 30px;
+  }
+  .error{
+    color: red;
+    
+  }

@@ -2,6 +2,7 @@
   min-width: 100vw;
   min-height: 100vh;
   background-color: rgba(210, 197, 122, 0.12);
+  justify-content: center;
 }
 .header{
   height: 100px;
@@ -25,44 +26,25 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
-.formulario{
-  max-width: 70%;
-  margin: 0 auto;
-  padding: 10px;
-  border: 2px solid rgb(129, 127, 127) ;
-  display: flex;
-  gap: 50px;
-  background-color: white;
+h2{
+  margin: 0;
 }
-.input__text{
-  display: flex;
-  gap: 10px;
-  border: none;
-}
-.input__radio{
-  border: none;
-}
-.input__text label{
-  font-size: 30px;
-  margin-right: 5px;
-}
-#descricao{
-  width: 300px;
-}
-.input__radio label{
-  font-size: 30px;
-}
-table{
+
+.table{
   width: 80%;
   border: 2px solid black;
   margin: 0 auto;
   padding: 2px;
 }
+
 th{
   border: 2px solid black;
+}
+.excluir{
+  border: none;
+  cursor: pointer;
 }
 .th__date{
   width: 10%;
@@ -75,4 +57,18 @@ th{
 }
 .th__id{
   width: 5%;
+}
+.green{
+  font-size: 25px;
+  font-weight: 700;
+  color:rgba(2, 104, 90, 0.79)
+}
+.red{
+  font-size: 25px;
+  font-weight: 700;
+  color: rgba(224, 10, 10, 0.79);
+}
+.total{
+  font-size: 25px;
+  font-weight: 700;
 }
