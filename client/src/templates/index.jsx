@@ -3,7 +3,7 @@ import './styles.css';
 import Axios from 'axios';
 import { Form } from '../components/Form';
 
-import {RiDeleteBinLine} from 'react-icons/ri'
+
 
 export const Home = () => {
   const [dados,setDados]= useState([0]); 
@@ -11,10 +11,10 @@ export const Home = () => {
   const [saida,setSaida] = useState(0);
   const [total,setTotal]= useState(0);
   const [values,setValues] = useState();
+  const [isOpen,setIsOpen]= useState(false);
   const url = 'http://localhost:3001/';
 
   const calcula=()=>{
-    console.log(dados)
     var auxE = 0;
     var auxS = 0;
     dados.forEach(element => {
@@ -39,11 +39,9 @@ export const Home = () => {
     getDados();
   },[] )
   useEffect(()=>{
-    calcula()},[dados])
-
-  const handleDelete = (obj) =>{
-    Axios.delete(`${url}delete/${obj}`)
-  }
+    calcula()
+  },[dados]);
+   
  
   return (
     <div className="body">
@@ -62,8 +60,10 @@ export const Home = () => {
           <p className='total'>R$:{total}</p>
         </div>
       </div>
-    
-      <Form getdados = {getDados()}/>
+      <button className='btn__new' onClick={()=>setIsOpen(true)}>New transfer</button>
+      
+      {isOpen ? <Form setOpen={setIsOpen}/> : ''}
+      
       
 
       <table className='table'>
