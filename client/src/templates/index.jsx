@@ -2,11 +2,14 @@ import { useEffect, useState } from 'react';
 import './styles.css';
 import Axios from 'axios';
 import { Form } from '../components/Form';
+import { Edit } from '../components/Form/edit';
 
 
 
 export const Home = () => {
   const [dados,setDados]= useState([0]); 
+  const [editDados,setEditDados] = useState();
+  const [openEdit,setOpenEdit] = useState();
   const [entrada,setEntrada]= useState(0);
   const [saida,setSaida] = useState(0);
   const [total,setTotal]= useState(0);
@@ -42,7 +45,17 @@ export const Home = () => {
     calcula()
   },[dados]);
    
- 
+ const data = (props) =>{
+  if(typeof props !== 'undefined'){
+    var string = props
+    const [ano,mes,edia]= string.split('-',3);
+    const dia = edia.substr(0,2)
+    const result = ano+'-'+mes+'-'+dia
+  return result
+  }
+  else return ''
+ }
+
   return (
     <div className="body">
       <header className='header'><h1>Controle financeiro</h1></header>
@@ -78,9 +91,9 @@ export const Home = () => {
         </thead>
         {typeof dados !== "undefined" && dados.map((obj)=>(
          
-          <tr key={obj.id}>
+          <tr key={obj.id}  onClick={()=> {setEditDados({id:obj.id, data:obj.data, descricao:obj.descricao, valor:obj.valor, condicao:obj.condicao });setOpenEdit(true)}}>
             <th className='th__id'>{obj.id}</th>
-            <th className='th__date'>{obj.data}</th>
+            <th className='th__date'>{data(obj.data)}</th>
             <th className='th__descricao'>{obj.descricao}</th>
             <th className='th__valor'>{obj.valor}</th>
             <th className='th__condicao'>{obj.condicao}</th>
@@ -89,9 +102,8 @@ export const Home = () => {
          ))
           }
       </table>
+      {openEdit ? <Edit editDados = {editDados} setOpenEdit={setOpenEdit}/> : ""}
     
     </div>
   );
 }
-
-
