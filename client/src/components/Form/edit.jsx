@@ -5,6 +5,8 @@ import {yupResolver} from '@hookform/resolvers/yup'
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
 
+
+
 const validar =  yup.object().shape({
     descricao:yup.string().required('*Campo obrigatório'),
     valor:yup.number().typeError('*apenas numeros são permitidos').required('*Campo obrigatório'),
@@ -17,6 +19,7 @@ export const Edit = ({editDados, setOpenEdit}) =>{
     const {register,handleSubmit, formState:{errors}} = useForm({
         resolver:yupResolver(validar)
       })
+
 
     const submit =  (values) =>{
         console.log(values)

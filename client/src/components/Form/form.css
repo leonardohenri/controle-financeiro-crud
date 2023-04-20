@@ -26,7 +26,7 @@
     width: 80%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 10px;
   }
   .fieldsetCustom{
     display: flex;
@@ -45,7 +45,10 @@
   }
   .btn{
     height: 50px;
-    width: 70px;
+    width: 80px;
+    background-color: white;
+    border: 1px solid rgba(168, 160, 160, 0.788);
+    border-radius: 20px;
   }
   
   .input__radio{

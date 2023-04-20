@@ -9,6 +9,7 @@
   display: flex;
   background-color: rgba(2, 104, 90, 0.79);
   justify-content: center;
+  align-items: center;
 }
 .grid{
   display: flex;
@@ -91,4 +92,11 @@ th{
   height: 40px;
   margin-left: 82%;
   margin-bottom:20px ;
+}
+.line-table{
+  cursor: pointer;
+}
+.line-table:hover{
+  transition: all 1s ease-in-out;
+  background-color: rgb(129, 127, 127);
 }

@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 import Axios from 'axios'
 import './form.css'
 import {useForm} from 'react-hook-form'
@@ -9,19 +7,24 @@ import * as yup from 'yup';
 
 const validar =  yup.object().shape({
 descricao:yup.string().required('*Campo obrigatório'),
-valor:yup.number().typeError('*apenas numeros são permitidos').required('*Campo obrigatório'),
+valor:yup.number().typeError('*Campo inválido').required('*Campo obrigatório'),
 data:yup.string().required('*Campo obrigatório'),
 condicao:yup.string().required('*Campo obrigatório')
 })
 
 
-export const Form = (props) =>{
+export const Form = ({setOpen,total}) =>{
     const {register,handleSubmit, formState:{errors}} = useForm({
       resolver:yupResolver(validar)
     })
     const url = "http://localhost:3001/";
     const submit = (values) =>{
-       
+       if(values.condicao === 'saida'){
+        if(total<values.valor){
+          alert('Valor de saida menor que o valor disponivel?')
+          return
+        }
+       }
         Axios.post(`${url}register`,{
           descricao:values.descricao,
           valor:values.valor,
@@ -32,7 +35,7 @@ export const Form = (props) =>{
       
       }
       const handleClose = () =>{
-        props.setOpen(false)
+        setOpen(false)
       }
     return(
         <div className='background__'>
@@ -52,7 +55,7 @@ export const Form = (props) =>{
             </fieldset>
 
             <fieldset className="fieldsetCustom">
-              <label >data</label><input type="date" id='data' name='data' {...register('data')} />
+              <label >data</label><input type="date" value={new Date().toISOString().substr(0, 10)}id='data' name='data' {...register('data')} />
               <p className="error">{errors.data?.message}</p>
             </fieldset>
 

@@ -3,6 +3,7 @@ import './styles.css';
 import Axios from 'axios';
 import { Form } from '../components/Form';
 import { Edit } from '../components/Form/edit';
+import { Chart } from "react-google-charts";
 
 
 
@@ -15,6 +16,7 @@ export const Home = () => {
   const [total,setTotal]= useState(0);
   const [values,setValues] = useState();
   const [isOpen,setIsOpen]= useState(false);
+  const [dadosGrafico,setDadosGraficos] = useState();
   const url = 'http://localhost:3001/';
 
   const calcula=()=>{
@@ -75,7 +77,7 @@ export const Home = () => {
       </div>
       <button className='btn__new' onClick={()=>setIsOpen(true)}>New transfer</button>
       
-      {isOpen ? <Form setOpen={setIsOpen}/> : ''}
+      {isOpen ? <Form total={total} setOpen={setIsOpen}/> : ''}
       
       
 
@@ -91,7 +93,7 @@ export const Home = () => {
         </thead>
         {typeof dados !== "undefined" && dados.map((obj)=>(
          
-          <tr key={obj.id}  onClick={()=> {setEditDados({id:obj.id, data:obj.data, descricao:obj.descricao, valor:obj.valor, condicao:obj.condicao });setOpenEdit(true)}}>
+          <tr key={obj.id} className='line-table' onClick={()=> {setEditDados({id:obj.id, data:obj.data, descricao:obj.descricao, valor:obj.valor, condicao:obj.condicao });setOpenEdit(true)}}>
             <th className='th__id'>{obj.id}</th>
             <th className='th__date'>{data(obj.data)}</th>
             <th className='th__descricao'>{obj.descricao}</th>
