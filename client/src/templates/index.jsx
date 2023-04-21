@@ -17,7 +17,7 @@ export const Home = () => {
   const [values,setValues] = useState();
   const [isOpen,setIsOpen]= useState(false);
   const [dadosGrafico,setDadosGraficos] = useState();
-  const url = 'http://localhost:3001/';
+  const url = 'https://fianceiro-express.onrender.com/';
 
   const calcula=()=>{
     var auxE = 0;
