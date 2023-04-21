@@ -49,6 +49,7 @@
     background-color: white;
     border: 1px solid rgba(168, 160, 160, 0.788);
     border-radius: 20px;
+    cursor: pointer;
   }
   
   .input__radio{
