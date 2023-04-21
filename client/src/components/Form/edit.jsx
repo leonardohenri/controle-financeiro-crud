@@ -37,8 +37,7 @@ export const Edit = ({editDados, setOpenEdit}) =>{
     
 
     const handleDelete = ()=>{
-        Axios.delete(`${url}delete/${editDados.id}`).then((err)=> console.log(err))
-        document.location.reload();
+        Axios.delete(`${url}delete/${editDados.id}`).then((err,res)=>{ console.log(err); if(res)document.location.reload();})
     }
 
     const data =()=>{
