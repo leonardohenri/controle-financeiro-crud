@@ -17,7 +17,7 @@ export const Form = ({setOpen,total}) =>{
     const {register,handleSubmit, formState:{errors}} = useForm({
       resolver:yupResolver(validar)
     })
-    const url = "http://localhost:3001/";
+    const url = "https://fianceiro-express.onrender.com/";
     const submit = (values) =>{
        if(values.condicao === 'saida'){
         if(total<values.valor){
