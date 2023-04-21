@@ -57,7 +57,7 @@ export const Form = ({setOpen,total}) =>{
             </fieldset>
 
             <fieldset className="fieldsetCustom">
-              <label >data</label><input type="date" value={new Date().toISOString().substr(0, 10)}id='data' name='data' {...register('data')} />
+              <label >data</label><input type="date" defaultValue={new Date().toISOString().substr(0, 10)}id='data' name='data' {...register('data')} />
               <p className="error">{errors.data?.message}</p>
             </fieldset>
 
