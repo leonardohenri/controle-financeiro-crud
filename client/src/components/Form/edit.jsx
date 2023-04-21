@@ -23,7 +23,7 @@ export const Edit = ({editDados, setOpenEdit}) =>{
 
     const submit =  (values) =>{
         console.log(values)
-        Axios.put(`http://localhost:3001/edit`,{
+        Axios.put(`${url}edit`,{
             id:editDados.id,
             descricao:values.descricao,
             valor:values.valor,
