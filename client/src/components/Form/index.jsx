@@ -33,7 +33,7 @@ export const Form = ({setOpen,total}) =>{
         }).then(err=>{console.log(err)} )
          setTimeout(() => {
           document.location.reload();
-        }, 500); 
+        }, 1000); 
       
       }
       const handleClose = () =>{
