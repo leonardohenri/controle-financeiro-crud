@@ -15,7 +15,7 @@ const validar =  yup.object().shape({
     })
 
 export const Edit = ({editDados, setOpenEdit}) =>{
-    const url = 'http://localhost:3001/';
+    const url = 'https://fianceiro-express.onrender.com/';
     const {register,handleSubmit, formState:{errors}} = useForm({
         resolver:yupResolver(validar)
       })
