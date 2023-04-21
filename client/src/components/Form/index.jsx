@@ -30,8 +30,7 @@ export const Form = ({setOpen,total}) =>{
           valor:values.valor,
           data:values.data,
           condicao: values.condicao
-        }).then(err=>{console.log(err); })
-        document.location.reload();
+        }).then((err,res)=>{console.log(err); if(res)document.location.reload(); })
       
       }
       const handleClose = () =>{
